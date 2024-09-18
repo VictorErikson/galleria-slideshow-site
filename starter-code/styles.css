@@ -17,17 +17,25 @@ body {
     /* header */
 
 header {
+    position: fixed;
+    top: 0;
+    height: 80px;
+    background: #FFF;
+    width: 100%;
+    z-index: 3;
+}
+
+.headerText {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 24px 0px 23px 0px;
+    margin: 24px 0px 20px 0px;
     padding: 0px 40px;
-    
 }
 
-header nav {
+.StartStopslideshow {
     color: #7D7D7D;
     text-align: right;
     font-family: "Libre Baskerville";
@@ -37,12 +45,12 @@ header nav {
     line-height: normal;
     letter-spacing: 1.929px;
  }
-header nav a {
+.StartStopslideshow a {
     text-decoration: none;
     color: #7D7D7D;
 }
 
-header nav a:hover {
+.StartStopslideshow a:hover {
     color: #000;
 } 
 
@@ -54,51 +62,21 @@ header nav a:hover {
     width: 100%;
 }
 
-    /* slide */
 
-.slide {
-    margin-top: 23px;
-    position: relative;
-    text-align: center;
-}
-.slide:hover{
-    cursor: pointer;
-}
-.slide:active  .slideImg {
-    cursor: pointer;  
-    opacity: 0.5;    
+    /* main  */
+
+main {
+    height: 100%;
+    overflow: hidden;
+    margin: 80px 0px 60px 0px;
 }
 
-.slideImg {
-    z-index: 0;
+.mainIndex {
+    height: 100%;
+    overflow: hidden;
+    margin: 80px 0px 0px 0px;
 }
 
-.gradient {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84)  100%);
-    position: absolute;
-    bottom: 4px;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    z-index: 1;      
-
-}
-
-.slideText {
-    position: absolute;
-    text-align: left;
-    bottom: 33px;
-    left: 32px;
-    z-index: 2;
-}
-
-.paintingNameContainer {
-    width: 246px;
-}
-
-.painterContainer {
-    width: 246px;
-}
 
 h2 {
     color: #FFF;
@@ -108,9 +86,9 @@ h2 {
     font-weight: 700;
     line-height: normal;
 
- }
+    }
 
- h3 {
+    h3 {
     color: #FFF;
     font-family: "Libre Baskerville";
     font-size: 13px;
@@ -119,8 +97,83 @@ h2 {
     line-height: normal;
     opacity: 0.75;
     padding-top: 7px;
- }
+    }
 
- .slideshow:last-child {
-    margin-bottom: 23px;
+
+
+
+
+
+
+
+
+    
+    /* start Page */
+
+        /* slide */
+
+        .slide {
+            margin-top: 23px;
+            position: relative;
+            text-align: center;
+        }
+        .slide:hover{
+            cursor: pointer;
+        }
+        .slide:active  .slideImg {
+            cursor: pointer;  
+            opacity: 0.5;    
+        }
+        
+        .slideImg {
+            z-index: 0;
+        }
+        
+        .gradient {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84)  100%);
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            z-index: 1;      
+        
+        }
+        
+        .slideText {
+            position: absolute;
+            text-align: left;
+            bottom: 33px;
+            left: 32px;
+            z-index: 2;
+        }
+        
+        .paintingNameContainer {
+            width: 246px;
+        }
+        
+        .painterContainer {
+            width: 246px;
+        }
+        
+        
+        
+         .slideshow:last-child {
+            margin-bottom: 23px;
+        }
+
+    /* SlideShow */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    opacity: 0.97;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
