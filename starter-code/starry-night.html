@@ -27,9 +27,14 @@
   <main>
     <section class="imgContainer"> 
       <img src="assets\starry-night\thumbnail.jpg" alt="Starry Night">
-      <button type="button">VIEW IMAGE</button>
+      <button class="viewImg" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path d="M7.71407 0L9.21407 1.5L6.85693 3.85714L8.14264 5.14285L10.4998 2.78571L11.9998 4.28571V0H7.71407Z" fill="white"/>
+        <path d="M3.85714 6.85718L1.5 9.21432L0 7.71431V12H4.28571L2.78571 10.5L5.14285 8.14288L3.85714 6.85718Z" fill="white"/>
+        <path d="M8.14264 6.85718L6.85693 8.14288L9.21407 10.5L7.71407 12H11.9998V7.71431L10.4998 9.21432L8.14264 6.85718Z" fill="white"/>
+        <path d="M4.28571 0H0V4.28571L1.5 2.78571L3.85714 5.14285L5.14285 3.85714L2.78571 1.5L4.28571 0Z" fill="white"/>
+        </svg> VIEW IMAGE</button>
   <!-- Modal start -->
-      <button type="button" style="display: none;">CLOSE</button>
+      <button class="closeImg" type="button" style="display: none;">CLOSE</button>
   <!-- Modal end -->
       <div class="artistContainer">
         <h2>Starry Night</h2>
@@ -39,10 +44,10 @@
     <section class="info">
       <div class="artistPicYear">
         <img src="assets\starry-night\artist.jpg" alt="Vincent Van Gogh">
-        <p>1889</p>
+        <p class="year">1889</p>
       </div>
       <article>
-        <p>Although The Starry Night was painted during the day in Van Gogh's ground-floor 
+        <p class="infoText">Although The Starry Night was painted during the day in Van Gogh's ground-floor 
           studio, it would be inaccurate to state that the picture was painted from memory. 
           The view has been identified as the one from his bedroom window, facing east, a 
           view which Van Gogh painted variations of no fewer than twenty-one times, including 
@@ -50,17 +55,18 @@
           around 23 May 1889, "I can see an enclosed square of wheat ... above which, in the 
           morning, I watch the sun rise in all its glory."</p>
       </article>
+    
+      <a class="source" href="https://en.wikipedia.org/wiki/The_Starry_Night">
+        <p>Go to source</p>
+      </a>
     </section>
-    <a class="source" href="https://en.wikipedia.org/wiki/The_Starry_Night">
-      <p>Go to source</p>
-    </a>
   </main>
   <footer>
     <div class="footerLeft">
       Starry Night
       Vincent Van Gogh
     </div>
-    <div class="fotterRight">
+    <div class="footerRight">
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
         <g opacity="0.15">
         <path d="M24.1655 1.8435L3.62701 12.1128L24.1655 22.382V1.8435Z" stroke="black" stroke-width="2"/>
