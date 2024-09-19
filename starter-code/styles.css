@@ -24,6 +24,10 @@ header {
     background: #FFF;
     width: 100%;
     z-index: 3;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #E5E5E5;
 }
 
 .headerText {
@@ -32,8 +36,8 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 24px 0px 20px 0px;
-    padding: 0px 40px;
+
+    padding: 0px 24px;
 }
 
 .StartStopslideshow {
@@ -55,13 +59,6 @@ header {
     color: #000;
 } 
 
-
-    /*line*/
-
-.line {
-    border-top: 1px solid #E5E5E5;
-    width: 100%;
-}
 
 
     /* main  */
@@ -189,8 +186,8 @@ footer {
 
 .viewImg {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 16px;
+    left: 16px;
     width: 152px;
     height: 40px;
     background: rgba(0, 0, 0, 0.7);
@@ -202,6 +199,9 @@ footer {
     font-weight: 700;
     line-height: normal;
     letter-spacing: 2.143px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
 }
 
@@ -209,35 +209,78 @@ footer {
 
 .artistContainer {
     background: #FFF;
-    color: #000;
     position: absolute;
     bottom: -54px;
     left: 0;
     z-index: 1;     
     width: 280px;
     height: 104px;
+
 }
 
-.info {
+.artistContainer h2 {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    justify-content: space-around;
+    align-items: space-around;
+    color: #000;
+    font-family: "Libre Baskerville";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px; /* 120.833% */
 }
+
+.artistContainer h3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: space-around;
+    color: #7D7D7D;
+    font-family: "Libre Baskerville";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
 
 .imgContainer {
     position: relative;
 }
 
+.imgContainer img {
+    width: 327px;
+    height: 280px;
+    flex-shrink: 0;
+}
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 24px 0px 24px;
+    margin-top: 54px;
+}
+.artistPic {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    margin-right: auto;
+    margin-left: 40px;
+}
+
 .year {
     color: #F3F3F3;
+    text-align: right;
     font-family: "Libre Baskerville";
-    font-size: 200px;
+    font-size: 100px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150px; /* 75% */
+    line-height: 100px; /* 100% */
     }
+
+
 
 .infoText {
     color: #7D7D7D;
@@ -248,3 +291,15 @@ footer {
     line-height: 28px; /* 200% */
 }
 
+.goToSource {
+    color: #7D7D7D;
+    font-family: "Libre Baskerville";
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.929px;
+    text-decoration: underline;
+    margin-top: 70px;
+    margin-bottom: 67px;
+}
