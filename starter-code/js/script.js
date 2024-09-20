@@ -46,3 +46,33 @@ art.forEach((art) => {
 });
 
 
+//set image width to most narrow width of all images
+
+const slides = document.querySelectorAll(".slide");
+let smallestWidth = 1000;
+
+slides.forEach((slide) => {
+    const img = slide.querySelector("img");
+    if (img.width < smallestWidth) {
+        smallestWidth = img.width;
+    }
+});
+
+//find the smallest width of all images
+function findSmallestImageWidth() {
+    const images = document.querySelectorAll(".slideImg"); // Select all loaded images
+    let smallestWidth = Infinity;
+    let smallestImg = null;
+
+    // Iterate through all the images
+    images.forEach((img) => {
+        if (img.naturalWidth < smallestWidth) {
+            smallestWidth = img.naturalWidth;  // Use naturalWidth for the actual image width
+            smallestImg = img.src;
+        }
+    });
+
+    console.log(`Smallest Image Width: ${smallestWidth} px for image ${smallestImg}`);
+}
+
+findSmallestImageWidth();
