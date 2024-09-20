@@ -1,4 +1,62 @@
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button,
+input {
+  border: 0;
+  padding: 0;
+  background: transparent
+}
+
+        /* min kod */
+
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +72,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }
     /* header */
 
@@ -65,7 +124,6 @@ header {
 
 main {
     height: 100%;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,8 +132,7 @@ main {
 }
 
 .mainIndex {
-    height: 100%;
-    overflow: hidden;
+    height: auto;
     margin: 80px 0px 0px 0px;
 }
 
@@ -113,20 +170,28 @@ padding-top: 7px;
 
         /* slide */
 
+
 .slide {
     margin-top: 23px;
     position: relative;
     text-align: center;
+    width: 90vw;
 }
+
 .slide:hover{
     cursor: pointer;
 }
+
 .slide:active  .slideImg {
     cursor: pointer;  
     opacity: 0.5;    
 }
 
 .slideImg {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     z-index: 0;
 }
 
@@ -159,29 +224,26 @@ padding-top: 7px;
 
 
 
-    .slideshow:last-child {
-    margin-bottom: 23px;
+.slideshow:last-child {
+margin-bottom: 23px;
 }
+
+
+
+
 
     /* SlideShow */
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    opacity: 0.97;
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
+
 
 .imgContainer {
     margin-top: 25px;
+    position: relative;
+}
 
+.imgContainer img {
+    width: 90vw;
+    flex-shrink: 0;
 }
 
 .viewImg {
@@ -202,10 +264,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
 }
 
-
+.viewImg:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2522);
+}
 
 .artistContainer {
     background: #FFF;
@@ -213,15 +277,16 @@ footer {
     bottom: -54px;
     left: 0;
     z-index: 1;     
-    width: 280px;
+    width: 70vw;
     height: 104px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 
 }
 
 .artistContainer h2 {
-    display: flex;
-    justify-content: space-around;
-    align-items: space-around;
     color: #000;
     font-family: "Libre Baskerville";
     font-size: 24px;
@@ -231,9 +296,6 @@ footer {
 }
 
 .artistContainer h3 {
-    display: flex;
-    justify-content: space-around;
-    align-items: space-around;
     color: #7D7D7D;
     font-family: "Libre Baskerville";
     font-size: 15px;
@@ -242,32 +304,89 @@ footer {
     line-height: normal;
 }
 
-
-
-.imgContainer {
-    position: relative;
+.artistContainer h3, .artistContainer h2 {
+    margin-left: 24px;
 }
 
-.imgContainer img {
-    width: 327px;
-    height: 280px;
-    flex-shrink: 0;
-}
-.infoContainer {
+
+
+
+
+    /* view img */
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreenContainer {
+   position: relative;
+   width: 80vw; 
+    height: 80vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+.imgWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+}
+.closeImg {
+    position: absolute;
+    top: -50px;
+    right: 0px;
+    color: #FFF;
+    text-align: right;
+    font-family: "Libre Baskerville";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrowLeftDisabledImg, .arrowRightDisabledImg, .arrowRightImg, .arrowLeftImg {
+    position: relative;
+    bottom: -20px;
+}
+
+.galleryImg {
+    width: 100%;
+    object-fit: contain;
+}
+
+.infoContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    height: auto;
     padding: 0px 24px 0px 24px;
     margin-top: 54px;
 }
 .artistPic {
-    width: 64px;
-    height: 64px;
+    width: 12vw;
     flex-shrink: 0;
     margin-right: auto;
     margin-left: 40px;
+    z-index: 2;
 }
 
 .year {
@@ -278,17 +397,23 @@ footer {
     font-style: normal;
     font-weight: 700;
     line-height: 100px; /* 100% */
+    z-index: 0;
+    margin-top: -30px;
+    margin-bottom: -30px;
     }
 
 
 
 .infoText {
+    
     color: #7D7D7D;
     font-family: "Libre Baskerville";
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: 28px; /* 200% */
+    top: 118px;
+    z-index: 2;
 }
 
 .goToSource {
@@ -302,4 +427,75 @@ footer {
     text-decoration: underline;
     margin-top: 70px;
     margin-bottom: 67px;
+}
+
+.goToSource:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+
+    /* footer */
+    
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    opacity: 0.97;
+    background-color: #333;
+    color: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 0px 24px;
+    opacity: 0.97;
+}
+
+
+.footerLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.paintingFooter {
+    font-family: "Libre Baskerville";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.painterFooter {
+    font-family: "Libre Baskerville";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.7528;
+}
+
+.arrowRight {
+    margin-left: 20px;
+}
+
+.arrowRight:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
+        /* tablet */
+
+@media (min-width: 481px) {
+
 }
