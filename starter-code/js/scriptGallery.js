@@ -58,6 +58,7 @@ if (currentArt) {
     nextLink.classList.add("disabled");
 }
 
+
 // // Handle prevArt
 const prevLink = document.querySelector(".footerRight .prev");
 if (prevArt) {
@@ -69,7 +70,7 @@ if (prevArt) {
     prevLink.classList.remove("enabled");
     prevLink.classList.add("disabled");
 }
-
+console.log(prevLink.classList);
 
 
     document.querySelector(".imgPainting").src = currentArt.img;

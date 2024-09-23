@@ -382,11 +382,13 @@ margin-bottom: 23px;
     opacity: 0.5;
 }
 
-.disabled:hover{
-
-    cursor: default;
+a.disabled:hover {
+    cursor: default; /* Prevent cursor change */
+    opacity: 0.15; /* Keep opacity fixed at 0.15 */
+    pointer-events: none;
 }
-a.prev.enabled, a.prev {
+
+a.prev, a.prev {
     outline: none; /* Removes the focus outline */
     text-decoration: none; /* Removes any text decoration (like underlines) */
     border: none; /* Just in case there is a border */
