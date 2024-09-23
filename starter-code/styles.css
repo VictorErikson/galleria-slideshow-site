@@ -171,35 +171,50 @@ padding-top: 7px;
         /* slide */
 
 
+
 .slide {
-    margin-top: 23px;
     position: relative;
     text-align: center;
     width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.imgWrapperIndex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align gradient at the bottom */
+    position: relative;
+    width: 100%;
 }
 
-.slide:hover{
-    cursor: pointer;
+.link {
+    margin: 0px 20px;
+    margin-top: 23px;
 }
 
-.slide:active  .slideImg {
+
+
+
+.slide a:active  .slideImg {
     cursor: pointer;  
     opacity: 0.5;    
 }
 
 .slideImg {
-    width: auto;
+    width: auto; 
     height: auto;
     max-width: 100%;
-    max-height: 100%;
+    /* max-height: 100%; */
     z-index: 0;
+    
 }
 
 .gradient {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84)  100%);
     position: absolute;
-    bottom: 2px;
-    left: 0;
+    bottom: 0px;
     width: 100%;
     height: 60%;
     z-index: 1;      
@@ -221,8 +236,6 @@ padding-top: 7px;
 .painterContainer {
     width: 246px;
 }
-
-
 
 .slideshow:last-child {
 margin-bottom: 23px;

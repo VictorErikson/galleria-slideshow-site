@@ -1,7 +1,6 @@
 
 import { art } from "./art.js";
 
-
 // Iterate over the art and create the HTML
 
 const slideshow = document.querySelector(".slideshow");
@@ -12,11 +11,17 @@ art.forEach((art) => {
 
     const link = document.createElement("a");
     link.href = art.href;
+    link.classList.add("link");
+
+    const imgWrapperIndex = document.createElement("div");
+    imgWrapperIndex.classList.add("imgWrapperIndex");
 
     const img = document.createElement("img");
     img.src = art.imgFullScreen;
     img.alt = art.painting;
     img.classList.add("slideImg");
+
+
 
     const gradient = document.createElement("div");
     gradient.classList.add("gradient");
@@ -40,39 +45,69 @@ art.forEach((art) => {
     painterContainer.append(painter);
     paintingNameContainer.append(painting);
     slideText.append(paintingNameContainer, painterContainer);
-    link.append(img, gradient, slideText);
+    imgWrapperIndex.append(img, gradient, slideText);
+    link.append(imgWrapperIndex);
     slide.append(link);
     slideshow.append(slide);
 });
 
 
-//set image width to most narrow width of all images
-
-const slides = document.querySelectorAll(".slide");
-let smallestWidth = 1000;
-
-slides.forEach((slide) => {
-    const img = slide.querySelector("img");
-    if (img.width < smallestWidth) {
-        smallestWidth = img.width;
-    }
-});
 
 //find the smallest width of all images
 function findSmallestImageWidth() {
     const images = document.querySelectorAll(".slideImg"); // Select all loaded images
     let smallestWidth = Infinity;
-    let smallestImg = null;
 
     // Iterate through all the images
     images.forEach((img) => {
-        if (img.naturalWidth < smallestWidth) {
-            smallestWidth = img.naturalWidth;  // Use naturalWidth for the actual image width
-            smallestImg = img.src;
+        // If the image is already loaded, handle it immediately
+        if (img.complete) {
+            if (img.naturalWidth < smallestWidth) {
+                smallestWidth = img.naturalWidth;
+            }
+        } else {
+            img.addEventListener('load', () => {
+                if (img.naturalWidth < smallestWidth) {
+                    smallestWidth = img.naturalWidth;
+                }
+                if (Array.from(images).every((img) => img.complete)) {
+                    setSmallestImageWidth(smallestWidth);
+                }
+            });
         }
     });
 
-    console.log(`Smallest Image Width: ${smallestWidth} px for image ${smallestImg}`);
+    // If all images are already loaded when the function is called
+    if (Array.from(images).every((img) => img.complete)) {
+        setSmallestImageWidth(smallestWidth);
+    }
 }
 
-findSmallestImageWidth();
+function setSmallestImageWidth(smallestWidth) {
+    const wrappers = document.querySelectorAll(".imgWrapperIndex");
+    wrappers.forEach((wrapper) => {
+        wrapper.style.width = `${smallestWidth}px`; // Set wrapper width to smallest image width
+    });
+
+    const images = document.querySelectorAll(".slideImg");
+    images.forEach((img) => {
+        img.style.width = "100%";  // Set each image to the smallest width
+    });
+
+}
+
+window.onload = () => {
+    findSmallestImageWidth();
+};
+
+
+// making gradients width same as image width
+// const images = document.querySelectorAll(".slideImg");
+
+// images.forEach((img) => {
+//     img.addEventListener('load', () => {
+//         const gradient = img.closest('.slide').querySelector('.gradient');
+//         gradient.style.width = `${img.offsetWidth}px`;
+//         gradient.style.left = `${img.offsetLeft}px`;
+//     });
+// });
