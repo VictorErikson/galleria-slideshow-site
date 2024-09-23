@@ -1,6 +1,7 @@
 export const art = [
     {
         painter: "Van Gogh",
+        fullName: "Vincent Van Gogh",
         painting: "Starry Night",
         wiki: "https://en.wikipedia.org/wiki/The_Starry_Night",
         year: 1889,

@@ -175,12 +175,17 @@ padding-top: 7px;
 .slide {
     position: relative;
     text-align: center;
-    width: 90vw;
+
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+
+.link {
+    margin: 0px 20px;
+    margin-top: 23px;
+}
+
 .imgWrapperIndex {
     display: flex;
     justify-content: center;
@@ -189,27 +194,12 @@ padding-top: 7px;
     width: 100%;
 }
 
-.link {
-    margin: 0px 20px;
-    margin-top: 23px;
-}
-
-
-
 
 .slide a:active  .slideImg {
     cursor: pointer;  
     opacity: 0.5;    
 }
 
-.slideImg {
-    width: auto; 
-    height: auto;
-    max-width: 100%;
-    /* max-height: 100%; */
-    z-index: 0;
-    
-}
 
 .gradient {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84)  100%);
@@ -241,10 +231,6 @@ padding-top: 7px;
 margin-bottom: 23px;
 }
 
-
-
-
-
     /* SlideShow */
 
 
@@ -255,8 +241,8 @@ margin-bottom: 23px;
 }
 
 .imgContainer img {
-    width: 90vw;
     flex-shrink: 0;
+    max-width: 90vw;
 }
 
 .viewImg {
@@ -372,11 +358,40 @@ margin-bottom: 23px;
     cursor: pointer;
     z-index: 10;
 }
+.closeImg:hover {
+    opacity: 0.25;
+}
 
-.arrowLeftDisabledImg, .arrowRightDisabledImg, .arrowRightImg, .arrowLeftImg {
+.arrowImg {
     position: relative;
     bottom: -20px;
 }
+
+.arrowRight {
+    margin-left: 20px;
+}
+
+
+.disabled{
+    opacity: 0.15;
+    cursor: none;
+}
+
+.arrow:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.disabled:hover{
+
+    cursor: default;
+}
+a.prev.enabled, a.prev {
+    outline: none; /* Removes the focus outline */
+    text-decoration: none; /* Removes any text decoration (like underlines) */
+    border: none; /* Just in case there is a border */
+}
+    /* gallery */
 
 .galleryImg {
     width: 100%;
@@ -497,14 +512,7 @@ footer {
     opacity: 0.7528;
 }
 
-.arrowRight {
-    margin-left: 20px;
-}
 
-.arrowRight:hover {
-    cursor: pointer;
-    opacity: 0.5;
-}
 
 
         /* tablet */

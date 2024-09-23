@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png"> -->
   <link rel="stylesheet" href="styles.css">
-  <script src="js/script.js" type="module" async></script>
+  <script src="js/scriptGallery.js" type="module" async></script>
   
   <title>Galleria slideshow site</title>
 </head>
@@ -23,31 +22,33 @@
       </nav>
     </div>
   </header>
+  
   <!-- Modal start -->
   <div class="fullscreen" style="display: none;">
     <div class="fullscreenContainer">
       <div class="imgWrapper">
-        <img class="galleryImg" src="assets\starry-night\gallery.jpg" alt="Starry Night">
+        <img class="galleryImg" src="#" alt="#">
         <button class="closeImg" type="button">CLOSE</button>
-          <svg class="arrowLeftDisabled arrowLeftDisabledImg" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
-            <g opacity="0.15">
-            <path d="M24.1655 1.8435L3.62701 12.1128L24.1655 22.382V1.8435Z" stroke="white" stroke-width="2"/>
-            <rect x="-0.371478" y="0.371478" width="0.742956" height="23.0316" transform="matrix(-1 0 0 1 0.742884 0)" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
-            </g>
+          <a class="prev" href="#">
+            <svg class="arrowLeft arrowImg arrow" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
+              <path d="M24.1655 1.8435L3.62701 12.1128L24.1655 22.382V1.8435Z" stroke="white" stroke-width="2"/>
+              <rect x="-0.371478" y="0.371478" width="0.742956" height="23.0316" transform="matrix(-1 0 0 1 0.742884 0)" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
             </svg>
-            <a href="girl-with-pearl-earring.html" class="next">
-              <svg class="arrowRight arrowRightImg" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
-                <path d="M1.52783 1.8435L22.0663 12.1128L1.52783 22.382V1.8435Z" stroke="white" stroke-width="2"/>
-                <rect x="24.579" y="0.371478" width="0.742956" height="23.0316" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
-                </svg>  
-            </a>
+          </a>
+            <!-- OBS DENNA MÅSTE BYTAS -->
+          <a class="next" href="#">
+            <svg class="arrowRight arrowImg arrow" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
+              <path d="M1.52783 1.8435L22.0663 12.1128L1.52783 22.382V1.8435Z" stroke="white" stroke-width="2"/>
+              <rect x="24.579" y="0.371478" width="0.742956" height="23.0316" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
+              </svg>  
+          </a>
       </div>
     </div>
   </div>
   <!-- Modal end -->
   <main>
     <section class="imgContainer"> 
-      <img src="assets\starry-night\hero-small.jpg" alt="Starry Night">
+      <img class="imgPainting" src="#" alt="#">
       <button class="viewImg" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
         <path d="M7.71407 0L9.21407 1.5L6.85693 3.85714L8.14264 5.14285L10.4998 2.78571L11.9998 4.28571V0H7.71407Z" fill="white"/>
         <path d="M3.85714 6.85718L1.5 9.21432L0 7.71431V12H4.28571L2.78571 10.5L5.14285 8.14288L3.85714 6.85718Z" fill="white"/>
@@ -55,24 +56,16 @@
         <path d="M4.28571 0H0V4.28571L1.5 2.78571L3.85714 5.14285L5.14285 3.85714L2.78571 1.5L4.28571 0Z" fill="white"/>
         </svg> VIEW IMAGE</button>
       <div class="artistContainer">
-        <h2>Starry Night</h2>
-        <h3>Vincent Van Gogh</h3>
+        <h2 class="painting">#</h2>
+        <h3 class="painterFull">#</h3>
       </div>
     </section>
     <section class="infoContainer">
-      <img class="artistPic" src="assets\starry-night\artist.jpg" alt="Vincent Van Gogh">
+      <img class="artistPic" src="#" alt="#">
       <article class="info">
-        <p class="year">1889</p>
-        <p class="infoText">Although The Starry Night was       painted during the day in Van Gogh's ground-floor 
-            studio, it would be inaccurate to state that the picture was painted from memory. 
-            The view has been identified as the one from his bedroom window, facing east, a 
-            view which Van Gogh painted variations of no fewer than twenty-one times, including 
-            The Starry Night. "Through the iron-barred window," he wrote to his brother, Theo, 
-            around 23 May 1889, "I can see an enclosed square of wheat ... above which, in the 
-            morning, I watch the sun rise in all its glory."</p>
-        
-      
-        <a class="source" target="_blank" href="https://en.wikipedia.org/wiki/The_Starry_Night">
+        <p class="year">#</p>
+        <p class="infoText">#</p>
+        <a class="source" target="_blank" href="#">
           <p class="goToSource">Go to source</p>
         </a>
       </div>
@@ -80,22 +73,22 @@
   </main>
   <footer>
     <div class="footerLeft">
-      <p class="paintingFooter">Starry Night</p>
-      <p class="painterFooter">Van Gogh</p>
+      <p class="paintingFooter">#</p>
+      <p class="painterFooter">#</p>
     </div>
     <div class="footerRight">
-      <svg class="arrowLeftDisabled" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
-        <g opacity="0.15">
-        <path d="M24.1655 1.8435L3.62701 12.1128L24.1655 22.382V1.8435Z" stroke="white" stroke-width="2"/>
-        <rect x="-0.371478" y="0.371478" width="0.742956" height="23.0316" transform="matrix(-1 0 0 1 0.742884 0)" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
-        </g>
-        </svg>
-        <a href="girl-with-pearl-earring.html" class="next">
-          <svg class="arrowRight" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
-            <path d="M1.52783 1.8435L22.0663 12.1128L1.52783 22.382V1.8435Z" stroke="white" stroke-width="2"/>
-            <rect x="24.579" y="0.371478" width="0.742956" height="23.0316" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
-            </svg>  
-        </a>
+      <a class="prev" href="#">
+        <svg class="arrowLeft arrow" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
+          <path d="M24.1655 1.8435L3.62701 12.1128L24.1655 22.382V1.8435Z" stroke="white" stroke-width="2"/>
+          <rect x="-0.371478" y="0.371478" width="0.742956" height="23.0316" transform="matrix(-1 0 0 1 0.742884 0)" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
+          </svg>
+      </a>
+      <a class="next" href="#">
+        <svg class="arrowRight arrow" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
+          <path d="M1.52783 1.8435L22.0663 12.1128L1.52783 22.382V1.8435Z" stroke="white" stroke-width="2"/>
+          <rect x="24.579" y="0.371478" width="0.742956" height="23.0316" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
+          </svg>  
+      </a>
     </div>
   </footer>
 </body>

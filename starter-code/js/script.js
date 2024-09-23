@@ -86,7 +86,7 @@ function findSmallestImageWidth() {
 function setSmallestImageWidth(smallestWidth) {
     const wrappers = document.querySelectorAll(".imgWrapperIndex");
     wrappers.forEach((wrapper) => {
-        wrapper.style.width = `${smallestWidth}px`; // Set wrapper width to smallest image width
+        wrapper.style.maxWidth = `${smallestWidth}px`; // Set wrapper width to smallest image width
     });
 
     const images = document.querySelectorAll(".slideImg");
@@ -100,14 +100,3 @@ window.onload = () => {
     findSmallestImageWidth();
 };
 
-
-// making gradients width same as image width
-// const images = document.querySelectorAll(".slideImg");
-
-// images.forEach((img) => {
-//     img.addEventListener('load', () => {
-//         const gradient = img.closest('.slide').querySelector('.gradient');
-//         gradient.style.width = `${img.offsetWidth}px`;
-//         gradient.style.left = `${img.offsetLeft}px`;
-//     });
-// });
