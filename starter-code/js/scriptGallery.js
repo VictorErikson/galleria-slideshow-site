@@ -47,20 +47,25 @@ if (currentArt) {
 
  // Handle nextArt
 
- const nextLink = document.querySelector(".footerRight .next");
- if (nextArt) {
-    nextLink.href = nextArt.href;
-    nextLink.classList.remove("disabled");
-    nextLink.classList.add("enabled");
-} else {
-    nextLink.href = "#"; 
-    nextLink.classList.remove("enabled");
-    nextLink.classList.add("disabled");
-}
+ const nextLinks = document.querySelectorAll(".next");
+
+ nextLinks.forEach((nextLink) => { 
+     if (nextArt) {
+        nextLink.href = nextArt.href;
+        nextLink.classList.remove("disabled");
+        nextLink.classList.add("enabled");
+    } else {
+        nextLink.href = "#"; 
+        nextLink.classList.remove("enabled");
+        nextLink.classList.add("disabled");
+    }
+
+
+ })
 
 
 // // Handle prevArt
-const prevLink = document.querySelector(".footerRight .prev");
+const prevLink = document.querySelector(".prev");
 if (prevArt) {
     prevLink.href = prevArt.href; // Assign previous art's href
     prevLink.classList.remove("disabled");
