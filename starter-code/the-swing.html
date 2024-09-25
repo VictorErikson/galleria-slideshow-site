@@ -18,7 +18,7 @@
           </svg>
       </h1>
       <nav class="StartStopslideshow">
-          <a href="index.html">STOP SLIDESHOW</a>
+          <a class="notSelectable" href="index.html">STOP SLIDESHOW</a>
       </nav>
     </div>
   </header>
@@ -26,17 +26,17 @@
   <!-- Modal start -->
   <div class="fullscreen" style="display: none;">
     <div class="fullscreenContainer">
-      <div class="imgWrapper">
-        <img class="galleryImg" src="#" alt="#">
-        <button class="closeImg" type="button">CLOSE</button>
-          <a class="prev" href="#">
+      <div class="imgWrapper notSelectable">
+        <img class="galleryImg notSelectable" src="#" alt="#">
+        <button class="closeImg notSelectable" type="button">CLOSE</button>
+          <a class="prev notSelectable" href="#">
             <svg class="arrowLeft arrowImg arrow" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
               <path d="M24.1655 1.8435L3.62701 12.1128L24.1655 22.382V1.8435Z" stroke="white" stroke-width="2"/>
               <rect x="-0.371478" y="0.371478" width="0.742956" height="23.0316" transform="matrix(-1 0 0 1 0.742884 0)" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
             </svg>
           </a>
             <!-- OBS DENNA MÅSTE BYTAS -->
-          <a class="next" href="#">
+          <a class="next notSelectable" href="#">
             <svg class="arrowRight arrowImg arrow" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
               <path d="M1.52783 1.8435L22.0663 12.1128L1.52783 22.382V1.8435Z" stroke="white" stroke-width="2"/>
               <rect x="24.579" y="0.371478" width="0.742956" height="23.0316" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
@@ -48,8 +48,8 @@
   <!-- Modal end -->
   <main>
     <section class="imgContainer"> 
-      <img class="imgPainting" src="#" alt="#">
-      <button class="viewImg" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <img class="imgPainting notSelectable" src="#" alt="#">
+      <button class="viewImg notSelectable" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
         <path d="M7.71407 0L9.21407 1.5L6.85693 3.85714L8.14264 5.14285L10.4998 2.78571L11.9998 4.28571V0H7.71407Z" fill="white"/>
         <path d="M3.85714 6.85718L1.5 9.21432L0 7.71431V12H4.28571L2.78571 10.5L5.14285 8.14288L3.85714 6.85718Z" fill="white"/>
         <path d="M8.14264 6.85718L6.85693 8.14288L9.21407 10.5L7.71407 12H11.9998V7.71431L10.4998 9.21432L8.14264 6.85718Z" fill="white"/>
@@ -61,29 +61,29 @@
       </div>
     </section>
     <section class="infoContainer">
-      <img class="artistPic" src="#" alt="#">
+      <img class="artistPic notSelectable" src="#" alt="#">
       <article class="info">
-        <p class="year">#</p>
+        <p class="year notSelectable">#</p>
         <p class="infoText">#</p>
-        <a class="source" target="_blank" href="#">
+        <a class="source notSelectable" target="_blank" href="#">
           <p class="goToSource">Go to source</p>
         </a>
       </div>
     </article>
   </main>
   <footer>
-    <div class="footerLeft">
+    <div class="footerLeft notSelectable">
       <p class="paintingFooter">#</p>
       <p class="painterFooter">#</p>
     </div>
     <div class="footerRight">
-      <a class="prev" href="#">
+      <a class="prev notSelectable" href="#">
         <svg class="arrowLeft arrow" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
           <path d="M24.1655 1.8435L3.62701 12.1128L24.1655 22.382V1.8435Z" stroke="white" stroke-width="2"/>
           <rect x="-0.371478" y="0.371478" width="0.742956" height="23.0316" transform="matrix(-1 0 0 1 0.742884 0)" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>
           </svg>
       </a>
-      <a class="next" href="#">
+      <a class="next notSelectable" href="#">
         <svg class="arrowRight arrow" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
           <path d="M1.52783 1.8435L22.0663 12.1128L1.52783 22.382V1.8435Z" stroke="white" stroke-width="2"/>
           <rect x="24.579" y="0.371478" width="0.742956" height="23.0316" fill="#D8D8D8" stroke="white" stroke-width="0.742956"/>

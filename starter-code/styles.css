@@ -361,7 +361,17 @@ margin-bottom: 23px;
 .closeImg:hover {
     opacity: 0.25;
 }
+    /* Not selectable items */
+.notSelectable {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
 
+
+ /* Next/prev buttons */
 .arrowImg {
     position: relative;
     bottom: -20px;
@@ -374,18 +384,16 @@ margin-bottom: 23px;
 
 .disabled{
     opacity: 0.15;
-    cursor: none;
+    cursor: default;
 }
 
-.arrow:hover {
+.enabled:hover {
     cursor: pointer;
     opacity: 0.5;
 }
 
 a.disabled:hover {
-    cursor: default; /* Prevent cursor change */
-    opacity: 0.15; /* Keep opacity fixed at 0.15 */
-    pointer-events: none;
+ pointer-events: none;
 }
 
 a.prev, a.prev {

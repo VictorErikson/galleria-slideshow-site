@@ -65,7 +65,9 @@ if (currentArt) {
 
 
 // // Handle prevArt
-const prevLink = document.querySelector(".prev");
+const prevLinks = document.querySelectorAll(".prev");
+
+prevLinks.forEach((prevLink) => {
 if (prevArt) {
     prevLink.href = prevArt.href; // Assign previous art's href
     prevLink.classList.remove("disabled");
@@ -75,7 +77,9 @@ if (prevArt) {
     prevLink.classList.remove("enabled");
     prevLink.classList.add("disabled");
 }
-console.log(prevLink.classList);
+
+})
+
 
 
     document.querySelector(".imgPainting").src = currentArt.img;
