@@ -80,7 +80,7 @@ if (prevArt) {
 
 })
 
-
+        //Update the content of the page with the currentArt object
 
     document.querySelector(".imgPainting").src = currentArt.img;
     document.querySelector(".imgPainting").alt = currentArt.painting;
