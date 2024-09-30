@@ -462,7 +462,6 @@ a.prev, a.prev {
     font-style: normal;
     font-weight: 700;
     line-height: 28px; /* 200% */
-    top: 118px;
     z-index: 2;
 }
 
@@ -562,16 +561,23 @@ footer {
             .year {
                 font-size: 200px;
                 line-height: 150px;
+                text-align: left;
             }
 
+            
+
             .imgPainting {
-                width: 60%;
+                width: 70%;
       
             }
 
             .imgContainer {
                 display: flex;
                 flex-direction: row;
+            }
+
+            .info {
+                
             }
              /* asdasd */
              /* .imgContainer {
