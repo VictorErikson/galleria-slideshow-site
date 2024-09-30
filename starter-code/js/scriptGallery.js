@@ -36,73 +36,104 @@ function findArtForPage() {
 
 const { currentArt, prevArt, nextArt } = findArtForPage();
 
+// Debounce function
+function debounce(func, wait) {
+    let timeout;
+    return function() {
+        clearTimeout(timeout);
+        timeout = setTimeout(func, wait);
+    };
+}
+
+// Function to update the image based on viewport width
+function updateImage() {
+    const imgPainting = document.querySelector('.imgPainting');
+    if (window.innerWidth > 481) {
+        imgPainting.src = currentArt.imgHeroLarge;
+    } else {
+        imgPainting.src = currentArt.img;
+    }
+    imgPainting.alt = currentArt.painting;
+}
+
 
 
 if (currentArt) {
-    // Now you have the currentArt object which corresponds to the page
+
+    updateImage();
+    window.addEventListener('resize', debounce(updateImage, 100));
+
 
     document.querySelector(".galleryImg").src = currentArt.imgFullScreen;
     document.querySelector(".galleryImg").alt = currentArt.painting;
 
-
  // Handle nextArt
 
- const nextLinks = document.querySelectorAll(".next");
+    const nextLinks = document.querySelectorAll(".next");
 
- nextLinks.forEach((nextLink) => { 
-     if (nextArt) {
-        nextLink.href = nextArt.href;
-        nextLink.classList.remove("disabled");
-        nextLink.classList.add("enabled");
+    nextLinks.forEach((nextLink) => { 
+        if (nextArt) {
+            nextLink.href = nextArt.href;
+            nextLink.classList.remove("disabled");
+            nextLink.classList.add("enabled");
+        } else {
+            nextLink.href = "#"; 
+            nextLink.classList.remove("enabled");
+            nextLink.classList.add("disabled");
+        }
+    })
+
+
+    // // Handle prevArt
+    const prevLinks = document.querySelectorAll(".prev");
+
+    prevLinks.forEach((prevLink) => {
+    if (prevArt) {
+        prevLink.href = prevArt.href; // Assign previous art's href
+        prevLink.classList.remove("disabled");
+        prevLink.classList.add("enabled");
     } else {
-        nextLink.href = "#"; 
-        nextLink.classList.remove("enabled");
-        nextLink.classList.add("disabled");
+        prevLink.href = "#"; // Hide or disable previous link if no previous art
+        prevLink.classList.remove("enabled");
+        prevLink.classList.add("disabled");
     }
 
+    })
 
- })
-
-
-// // Handle prevArt
-const prevLinks = document.querySelectorAll(".prev");
-
-prevLinks.forEach((prevLink) => {
-if (prevArt) {
-    prevLink.href = prevArt.href; // Assign previous art's href
-    prevLink.classList.remove("disabled");
-    prevLink.classList.add("enabled");
-} else {
-    prevLink.href = "#"; // Hide or disable previous link if no previous art
-    prevLink.classList.remove("enabled");
-    prevLink.classList.add("disabled");
-}
-
-})
-
-        //Update the content of the page with the currentArt object
-
-    document.querySelector(".imgPainting").src = currentArt.img;
-    document.querySelector(".imgPainting").alt = currentArt.painting;
-
+    // Update the rest of the content
     document.querySelector(".painting").textContent = currentArt.painting;
-    if (currentArt.fullName) {
-        document.querySelector(".painterFull").textContent = currentArt.fullName;
-        document.querySelector(".artistPic").alt = currentArt.fullName;
-    } else {
-        document.querySelector(".painterFull").textContent = currentArt.painter;
-        document.querySelector(".artistPic").alt = currentArt.painter;
-    }
-
+    const painterFull = currentArt.fullName || currentArt.painter;
+    document.querySelector(".painterFull").textContent = painterFull;
     document.querySelector(".artistPic").src = currentArt.imgPainter;
+    document.querySelector(".artistPic").alt = painterFull;
     document.querySelector(".year").textContent = currentArt.year;
     document.querySelector(".infoText").textContent = currentArt.text;
     document.querySelector(".source").href = currentArt.wiki;
-    
     document.querySelector(".paintingFooter").textContent = currentArt.painting;
     document.querySelector(".painterFooter").textContent = currentArt.painter;
+        //Update the content of the page with the currentArt object
+    
+//     document.querySelector(".imgPainting").src = currentArt.img;
+//     document.querySelector(".imgPainting").alt = currentArt.painting;
 
-}
+//     document.querySelector(".painting").textContent = currentArt.painting;
+//     if (currentArt.fullName) {
+//         document.querySelector(".painterFull").textContent = currentArt.fullName;
+//         document.querySelector(".artistPic").alt = currentArt.fullName;
+//     } else {
+//         document.querySelector(".painterFull").textContent = currentArt.painter;
+//         document.querySelector(".artistPic").alt = currentArt.painter;
+//     }
+
+//     document.querySelector(".artistPic").src = currentArt.imgPainter;
+//     document.querySelector(".year").textContent = currentArt.year;
+//     document.querySelector(".infoText").textContent = currentArt.text;
+//     document.querySelector(".source").href = currentArt.wiki;
+    
+//     document.querySelector(".paintingFooter").textContent = currentArt.painting;
+//     document.querySelector(".painterFooter").textContent = currentArt.painter;
+
+ }
 
 
 

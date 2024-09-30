@@ -563,36 +563,36 @@ footer {
                 font-size: 200px;
                 line-height: 150px;
             }
-             /* asdasd */
-             .imgContainer {
-                margin-bottom: 25px;
+
+            .imgPainting {
+                width: 60%;
+      
             }
 
-            .imgContainer img {
+            .imgContainer {
+                display: flex;
+                flex-direction: row;
+            }
+             /* asdasd */
+             /* .imgContainer {
+                margin-bottom: 25px;
+                display: flex;
+                flex-direction: row;
+            } */
+
+            /* .imgContainer img {
                 flex-shrink: 0;
                 max-width: 90vw;
             }
+             */
 
-            /* .viewImg {
+             .viewImg {
                 position: absolute;
-                top: 16px;
+                bottom: 16px;
                 left: 16px;
-                width: 152px;
-                height: 40px;
-                background: rgba(0, 0, 0, 0.7);
-                color: #FFF;
-                text-align: right;
-                font-family: "Libre Baskerville";
-                font-size: 10px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-                letter-spacing: 2.143px;
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
+               
             }
-
+            /*
             .viewImg:hover {
                 cursor: pointer;
                 background: rgba(255, 255, 255, 0.2522);
