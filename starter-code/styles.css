@@ -769,6 +769,7 @@ footer {
                 flex-direction: row;
                 justify-content: center;
                 width: 66vw;
+                padding: 0px;
             }
 
           
@@ -781,7 +782,7 @@ footer {
             }
             .imgPainting {
                 width: auto;
-                max-height: 60vh;
+                max-height: 54vh;
             }
 
             .imgInfo {
@@ -794,7 +795,7 @@ footer {
                 top: -1px;
                 bottom: auto;
                 left: auto;
-                width: 33vw;
+                width: 27vw;
                 right: 0px;
                 z-index: 2;    
                 display: flex;
@@ -807,14 +808,16 @@ footer {
                 margin-right: auto;
                 margin-left: 0px;
                 z-index: 2;
-                position: relative;
-                bottom: auto;
+                position: absolute;
+                top: 50%;
+                right: 50%;
+          
             }
             .infoContainer {
                 align-items: flex-start;
                 margin-top: 0px;
                 padding: 0px;
-                width: 33vw;
+                width: 39vw;
             }
             .info {
                 flex-wrap: wrap;
@@ -827,7 +830,7 @@ footer {
                 margin-bottom: 0px;
             }
             .breadTextSourceContainer {
-                width: 66%;
+                width: 75%;
             }
 
             .goToSource {
