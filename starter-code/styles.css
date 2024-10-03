@@ -540,6 +540,16 @@ footer {
         /* tablet */
 
         @media (min-width: 481px) {
+          
+            /* Header */
+            header {
+                height: 96px;
+            }
+            
+            .StartStopslideshow {
+                font-size: 12px;
+                letter-spacing: 2.571px;
+             }
             /* Index page */
             .slideshow {
                 /* column-width: 200px; */
@@ -564,11 +574,16 @@ footer {
                 line-height: 150px;
             }
 
+
+            main {
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin: 100px 0px 60px 0px;
+            } 
             .imgPainting {
                 width: 60%;
       
             }
-
             .imgContainer {
                 display: flex;
                 flex-direction: row;
@@ -626,6 +641,39 @@ footer {
                 color: #7D7D7D;
                 font-family: "Libre Baskerville";
                 font-size: 15px;
+                margin-top: 24px;
+                margin-bottom: 67px;
+                
+            }
+            .artistContainer h2, .artistContainer h3 {
+                margin-left: 45px;
+                padding: 0px;
+                margin-right: 0px;
+            }
+
+            
+            .artistPic {
+                width: 128px;
+                flex-shrink: 0;
+                margin-right: auto;
+                margin-left: 30px;
+                z-index: 2;
+                position: absolute;
+                top: -113;
+
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                
+            }
+
+            .infoContainer {
+                height: 100%;
+
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
@@ -647,6 +695,14 @@ footer {
         /* desktop */
 
         @media (min-width: 1025px) {
+
+
+            body {
+                min-height: 100vh;
+            }
+
+            /* Index */
+
             .slideshow {
                 column-count: 4;
                 column-gap: 1em; 
@@ -664,5 +720,98 @@ footer {
                 margin-top: 0px;
             }
             
-           
+            .painter {
+                font-size: clamp(2px, 1.5vw + 5px, 15px);
+            }
+
+            /* Gallery */
+            
+            #contentContainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+            main {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100vw;
+                height: 100%;
+                margin: 0px;
+            }
+
+            .imgContainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 66vw;
+                padding: 0px;
+            }
+
+          
+
+            .bigImgContainer {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                width: 33vw;
+            }
+            .imgPainting {
+                width: auto;
+                max-height: 54vh;
+            }
+
+            .imgInfo {
+                position: relative;  
+                
+            }
+
+            .artistContainer {
+                position: relative;
+                top: -1px;
+                bottom: auto;
+                left: auto;
+                width: 27vw;
+                right: 0px;
+                z-index: 2;    
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+            .artistPic { 
+                width: 128px;
+                margin-right: auto;
+                margin-left: 0px;
+                z-index: 2;
+                position: absolute;
+                top: 50%;
+                right: 50%;
+          
+            }
+            .infoContainer {
+                align-items: flex-start;
+                margin-top: 0px;
+                padding: 0px;
+                width: 39vw;
+            }
+            .info {
+                flex-wrap: wrap;
+            }
+
+            .year {
+                top: 0px;
+                left: 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            .breadTextSourceContainer {
+                width: 75%;
+            }
+
+            .goToSource {
+                margin-bottom: 0px;
+            }
         }
