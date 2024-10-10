@@ -519,6 +519,7 @@ footer {
     height: 72px;
     padding: 0px 24px;
     opacity: 0.97;
+    border-top: 3px solid red;
 }
 
 
