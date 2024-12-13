@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return null;
         }
         const currentArt = art[currentIndex];
-        const nextArt = art[currentIndex + 1] || null; 
-        const prevArt = art[currentIndex - 1] || null; 
+        const nextArt = art[currentIndex + 1] || null;
+        const prevArt = art[currentIndex - 1] || null;
 
         return { currentArt, prevArt, nextArt };
     }
@@ -58,21 +58,21 @@ document.addEventListener('DOMContentLoaded', function() {
         imgPainting.alt = currentArt.painting;
     }
 
-    // function updatePainterImagePosition() {
-    //     const artistContainer = document.querySelector('.artistContainer');
-    //     const artistPic = document.querySelector('.artistPic');
-    //     if (!artistContainer || !artistPic) return;
+    function updatePainterImagePosition() {
+        const artistContainer = document.querySelector('.artistContainer');
+        const artistPic = document.querySelector('.artistPic');
+        if (!artistContainer || !artistPic) return;
 
-    //     if (window.innerWidth > 481) {
-    //         const containerHeight = artistContainer.offsetHeight;
-    //         artistPic.style.top = containerHeight + 'px';
-    //         artistPic.style.bottom = '';
-    //     } else {
-    //         artistPic.style.bottom = '-113px';
-    //         artistPic.style.top = '';
-    //     }
+        if (window.innerWidth > 481) {
+            const containerHeight = artistContainer.offsetHeight;
+            artistPic.style.top = containerHeight + 'px';
+            artistPic.style.bottom = '';
+        } else {
+            artistPic.style.bottom = '-113px';
+            artistPic.style.top = '';
+        }
 
-    // }
+    }
 
 
     // Function to set the top position of .artistPic to be just below .artistContainer
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //     const artistPic = document.querySelector('.artistPic');
     //     const containerHeight = artistContainer.offsetHeight;
     //     const containerTop = parseFloat(getComputedStyle(artistContainer).top);
-        
+
     //     // Set the top position of .artistPic to be just below .artistContainer
     //     artistPic.style.top = (containerTop + containerHeight) + 'px';
     //   });
@@ -91,9 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentArt) {
 
         updateImage();
-        // setTimeout(updatePainterImagePosition, 0);
-        // window.addEventListener('resize', debounce(updateImage, 5));
-        // window.addEventListener('resize', debounce(updatePainterImagePosition, 5));
+        setTimeout(updatePainterImagePosition, 0);
+        window.addEventListener('resize', debounce(updateImage, 5));
+        window.addEventListener('resize', debounce(updatePainterImagePosition, 5));
 
 
         document.querySelector(".galleryImg").src = currentArt.imgFullScreen;
@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const nextLinks = document.querySelectorAll(".next");
 
-        nextLinks.forEach((nextLink) => { 
+        nextLinks.forEach((nextLink) => {
             if (nextArt) {
                 nextLink.href = nextArt.href;
                 nextLink.classList.remove("disabled");
                 nextLink.classList.add("enabled");
             } else {
-                nextLink.href = "#"; 
+                nextLink.href = "#";
                 nextLink.classList.remove("enabled");
                 nextLink.classList.add("disabled");
             }
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector(".paintingFooter").textContent = currentArt.painting;
         document.querySelector(".painterFooter").textContent = painterFull;
             //Update the content of the page with the currentArt object
-        
+
     //     document.querySelector(".imgPainting").src = currentArt.img;
     //     document.querySelector(".imgPainting").alt = currentArt.painting;
 
@@ -161,14 +161,10 @@ document.addEventListener('DOMContentLoaded', function() {
     //     document.querySelector(".year").textContent = currentArt.year;
     //     document.querySelector(".infoText").textContent = currentArt.text;
     //     document.querySelector(".source").href = currentArt.wiki;
-        
+
     //     document.querySelector(".paintingFooter").textContent = currentArt.painting;
     //     document.querySelector(".painterFooter").textContent = currentArt.painter;
 
     }
 
 });
-
-
-
-
