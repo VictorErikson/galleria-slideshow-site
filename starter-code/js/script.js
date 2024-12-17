@@ -1,7 +1,7 @@
 
 import { art } from "./art.js";
 
-// Iterate over the art and create the HTML
+
 
 const slideshow = document.querySelector(".slideshow");
 
@@ -53,14 +53,14 @@ art.forEach((art) => {
 
 
 
-//find the smallest width of all images
+
 function findSmallestImageWidth() {
-    const images = document.querySelectorAll(".slideImg"); // Select all loaded images
+    const images = document.querySelectorAll(".slideImg"); 
     let smallestWidth = Infinity;
 
-    // Iterate through all the images
+
     images.forEach((img) => {
-        // If the image is already loaded, handle it immediately
+
         if (img.complete) {
             if (img.naturalWidth < smallestWidth) {
                 smallestWidth = img.naturalWidth;
@@ -77,7 +77,7 @@ function findSmallestImageWidth() {
         }
     });
 
-    // If all images are already loaded when the function is called
+
     if (Array.from(images).every((img) => img.complete)) {
         setSmallestImageWidth(smallestWidth);
     }
@@ -86,12 +86,12 @@ function findSmallestImageWidth() {
 function setSmallestImageWidth(smallestWidth) {
     const wrappers = document.querySelectorAll(".imgWrapperIndex");
     wrappers.forEach((wrapper) => {
-        wrapper.style.maxWidth = `${smallestWidth}px`; // Set wrapper width to smallest image width
+        wrapper.style.maxWidth = `${smallestWidth}px`; 
     });
 
     const images = document.querySelectorAll(".slideImg");
     images.forEach((img) => {
-        img.style.width = "100%";  // Set each image to the smallest width
+        img.style.width = "100%";  
     });
 
 }

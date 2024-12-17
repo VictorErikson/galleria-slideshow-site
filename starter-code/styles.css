@@ -412,6 +412,7 @@ a.prev, a.prev {
     line-height: 29px; /* 120.833% */
     margin-top: 24px;
     width: 86%;
+    padding-right: 10px;
 }
 
 .artistContainer h3 {
@@ -436,6 +437,7 @@ a.prev, a.prev {
     margin-right: auto;
     margin-left: 20px;
     z-index: 2;
+    margin-top: 51px;
     
 }
 
@@ -547,7 +549,7 @@ footer {
 
         /* tablet */
 
-        @media (min-width: 481px) {
+        @media (min-width: 700px) {
             /* Header */
             header {
                 height: 96px;
@@ -614,6 +616,7 @@ footer {
             .imgInfo {
                 position: relative;
                 width: 100%;
+                justify-content: flex-end;
               }
 
             .artistContainer {
@@ -655,9 +658,10 @@ footer {
                 flex-shrink: 0;
                 margin-right: auto;
                 margin-left: 30px;
+                /* margin-top: 186px; */
                 z-index: 2;
-                position: absolute;
-                top: -113;
+                position: relative;
+                top: 0px;
 
             }
 
@@ -671,6 +675,7 @@ footer {
 
             .infoContainer {
                 height: 100%;
+                
             }
 
             .year {
@@ -775,7 +780,7 @@ footer {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
-                max-width: 1335px;
+                max-width: 1500px;
                 padding: 126px 40px;
                 height: 100%;
                 margin: 0px;
@@ -797,10 +802,12 @@ footer {
                 justify-content: space-evenly;
                 align-items: flex-start;
                 width: 60%;
+                height: 100%;
             }
             .imgContainer img {
                 height: auto;
                 max-width: 100%;
+                position: relative;
             }
 
             .imgInfo {
@@ -845,6 +852,7 @@ footer {
                 margin-top: 0px;
                 padding: 0px;
                 width: 33%;
+                align-self: center;
             }
             .info {
                 flex-wrap: wrap;
